@@ -1,38 +1,33 @@
 /**
- * Copyright 2016 Linagora
+ * Copyright (c) 2016-2017 Inria
+ *  
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ * - Philippe Merle <philippe.merle@inria.fr>
+ * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * Generated at Tue Sep 12 13:55:57 CEST 2017 from platform:/plugin/org.eclipse.cmf.occi.platform/model/Platform.occie by org.eclipse.cmf.occi.core.gen.connector
  */
-
-// Generated at Tue Dec 13 14:38:08 CET 2016 from 
-// platform:/plugin/org.occiware.clouddesigner.occi.platform/model/platform.occie by org.occiware.clouddesigner.occi.gen.connector
 package net.roboconf.occi.platform.mart;
 
 import java.util.logging.Logger;
 
-import org.occiware.clouddesigner.occi.platform.Status;
+import org.eclipse.cmf.occi.platform.Status;
 
 import net.roboconf.core.model.beans.Instance.InstanceStatus;
 import net.roboconf.dm.rest.client.WsClient;
 import net.roboconf.dm.rest.client.exceptions.ApplicationWsException;
-
 /**
  * Connector implementation for the OCCI kind:
  * - scheme: http://schemas.ogf.org/occi/platform#
  * - term: component
  * - title: Component
  */
-public class ComponentConnector extends org.occiware.clouddesigner.occi.platform.impl.ComponentImpl
+public class ComponentConnector extends org.eclipse.cmf.occi.platform.impl.ComponentImpl
 {
 	String applicationName = "occiware-test-application";
 	Logger logger = Logger.getLogger(this.getClass().getName());
@@ -108,9 +103,9 @@ public class ComponentConnector extends org.occiware.clouddesigner.occi.platform
 
 		try {
 			WsClient client = new WsClient(getRoboconfUrl());
-			client.getApplicationDelegate().changeInstanceState(this.getMessage(),
+			client.getApplicationDelegate().changeInstanceState(this.getOcciComponentStateMessage(),
 					InstanceStatus.DEPLOYED_STARTED, this.getTitle());
-			this.setState(Status.ACTIVE);
+			this.setOcciComponentState(Status.ACTIVE);
 		} catch (ApplicationWsException e) {
 			e.printStackTrace(System.err);
 		}
@@ -129,9 +124,9 @@ public class ComponentConnector extends org.occiware.clouddesigner.occi.platform
 
 		try {
 			WsClient client = new WsClient(getRoboconfUrl());
-			client.getApplicationDelegate().changeInstanceState(this.getMessage(),
+			client.getApplicationDelegate().changeInstanceState(this.getOcciComponentStateMessage(),
 					InstanceStatus.NOT_DEPLOYED, this.getTitle());
-			this.setState(Status.INACTIVE);
+			this.setOcciComponentState(Status.INACTIVE);
 		} catch (ApplicationWsException e) {
 			e.printStackTrace(System.err);
 		}

@@ -1,22 +1,20 @@
 /**
- * Copyright 2016 Linagora
+ * Copyright (c) 2016-2017 Inria
+ *  
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ * - Philippe Merle <philippe.merle@inria.fr>
+ * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * Generated at Tue Sep 12 13:55:57 CEST 2017 from platform:/plugin/org.eclipse.cmf.occi.platform/model/Platform.occie by org.eclipse.cmf.occi.core.gen.connector
  */
-
-// Generated at Tue Dec 13 14:38:08 CET 2016 from 
-// platform:/plugin/org.occiware.clouddesigner.occi.platform/model/platform.occie by org.occiware.clouddesigner.occi.gen.connector
 package net.roboconf.occi.platform.mart;
+
+import java.util.logging.Logger;
 
 /**
  * Connector implementation for the OCCI kind:
@@ -24,66 +22,76 @@ package net.roboconf.occi.platform.mart;
  * - term: componentlink
  * - title: ComponentLink
  */
-public class ComponentlinkConnector extends org.occiware.clouddesigner.occi.platform.impl.ComponentlinkImpl
+public class ComponentlinkConnector extends org.eclipse.cmf.occi.platform.impl.ComponentlinkImpl
 {
+	/**
+	 * Initialize the logger.
+	 */
+	private static Logger LOGGER = Logger.getLogger(ComponentlinkConnector.class.getName());
+
+	// Start of user code Componentlinkconnector_constructor
 	/**
 	 * Constructs a componentlink connector.
 	 */
 	ComponentlinkConnector()
 	{
-		System.out.println("Constructor called on " + this);
+		LOGGER.finest("Constructor called on " + this);
+		// TODO: Implement this constructor.
 	}
-
+	// End of user code
 	//
 	// OCCI CRUD callback operations.
 	//
-
+	
+	// Start of user code ComponentlinkocciCreate
 	/**
 	 * Called when this Componentlink instance is completely created.
 	 */
 	@Override
 	public void occiCreate()
 	{
-		System.out.println("occiCreate() called on " + this);
-
+		LOGGER.finest("occiCreate() called on " + this);
 		// TODO: Implement this callback or remove this method.
 	}
+	// End of user code
 
+	// Start of user code Componentlink_occiRetrieve_method
 	/**
 	 * Called when this Componentlink instance must be retrieved.
 	 */
 	@Override
 	public void occiRetrieve()
 	{
-		System.out.println("occiRetrieve() called on " + this);
-
+		LOGGER.finest("occiRetrieve() called on " + this);
 		// TODO: Implement this callback or remove this method.
 	}
+	// End of user code
 
+	// Start of user code Componentlink_occiUpdate_method
 	/**
 	 * Called when this Componentlink instance is completely updated.
 	 */
 	@Override
 	public void occiUpdate()
 	{
-		System.out.println("occiUpdate() called on " + this);
-
+		LOGGER.finest("occiUpdate() called on " + this);
 		// TODO: Implement this callback or remove this method.
 	}
+	// End of user code
 
+	// Start of user code ComponentlinkocciDelete_method
 	/**
 	 * Called when this Componentlink instance will be deleted.
 	 */
 	@Override
 	public void occiDelete()
 	{
-		System.out.println("occiDelete() called on " + this);
-
+		LOGGER.finest("occiDelete() called on " + this);
 		// TODO: Implement this callback or remove this method.
 	}
+	// End of user code
 
 	//
 	// Componentlink actions.
 	//
-
 }	
