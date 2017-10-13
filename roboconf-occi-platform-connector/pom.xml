@@ -31,7 +31,7 @@
 	<properties>
 		<tycho-version>0.26.0</tycho-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<roboconf.platform.version>0.10-SNAPSHOT</roboconf.platform.version>
+		<roboconf.platform.version>0.9</roboconf.platform.version>
 		<jackson.stack.version>2.3.1</jackson.stack.version>
 		<jersey.stack.version>1.18.2</jersey.stack.version>
 	</properties>
