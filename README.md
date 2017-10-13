@@ -15,6 +15,8 @@ The connector is then available in roboconf-occi-platform-connector/target (jar 
 ## Deployment instructions (MART server)
 
 in MartServer/org.occiware.mart.jetty/ directory, add the following dependencies to pom.xml:
+
+```
 <dependency>
   <groupId>org.occiware</groupId>
   <artifactId>org.eclipse.cmf.occi.platform</artifactId>
@@ -25,6 +27,7 @@ in MartServer/org.occiware.mart.jetty/ directory, add the following dependencies
   <artifactId>roboconf.platform.connector</artifactId>
   <version>0.1.0-SNAPSHOT</version>
 </dependency>
+```
 
 Then build: mvn clean install
 
