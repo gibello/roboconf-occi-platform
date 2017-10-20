@@ -22,7 +22,7 @@ import java.util.logging.Logger;
  * - term: app_tpl
  * - title: Application Template
  */
-public class App_tplConnector extends org.eclipse.cmf.occi.platform.impl.App_tplImpl
+public class App_tplConnector extends org.modmacao.occi.platform.impl.App_tplImpl
 {
 	/**
 	 * Initialize the logger.

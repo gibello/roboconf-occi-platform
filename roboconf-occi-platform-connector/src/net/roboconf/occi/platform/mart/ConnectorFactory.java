@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Tue Sep 12 13:55:57 CEST 2017 from platform:/plugin/org.eclipse.cmf.occi.platform/model/Platform.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Tue Sep 12 13:55:57 CEST 2017 from platform:/plugin/org.modmacao.occi.platform/model/Platform.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package net.roboconf.occi.platform.mart;
 
@@ -19,7 +19,7 @@ package net.roboconf.occi.platform.mart;
  * - name: platform
  * - scheme: http://schemas.ogf.org/occi/platform#
  */
-public class ConnectorFactory extends org.eclipse.cmf.occi.platform.impl.PlatformFactoryImpl
+public class ConnectorFactory extends org.modmacao.occi.platform.impl.PlatformFactoryImpl
 {
 	/**
 	 * EFactory method for OCCI kind:
@@ -28,7 +28,7 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.platform.impl.Platfor
 	 * - title: Application
 	 */
 	@Override
-	public org.eclipse.cmf.occi.platform.Application createApplication() {
+	public org.modmacao.occi.platform.Application createApplication() {
 		return new ApplicationConnector();
 	}
 
@@ -39,7 +39,7 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.platform.impl.Platfor
 	 * - title: Component
 	 */
 	@Override
-	public org.eclipse.cmf.occi.platform.Component createComponent() {
+	public org.modmacao.occi.platform.Component createComponent() {
 		return new ComponentConnector();
 	}
 
@@ -50,7 +50,7 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.platform.impl.Platfor
 	 * - title: ComponentLink
 	 */
 	@Override
-	public org.eclipse.cmf.occi.platform.Componentlink createComponentlink() {
+	public org.modmacao.occi.platform.Componentlink createComponentlink() {
 		return new ComponentlinkConnector();
 	}
 
@@ -61,7 +61,7 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.platform.impl.Platfor
 	 * - title: Application Template
 	 */
 	@Override
-	public org.eclipse.cmf.occi.platform.App_tpl createApp_tpl() {
+	public org.modmacao.occi.platform.App_tpl createApp_tpl() {
 		return new App_tplConnector();
 	}
 
@@ -72,7 +72,7 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.platform.impl.Platfor
 	 * - title: Resource Template
 	 */
 	@Override
-	public org.eclipse.cmf.occi.platform.Res_tpl createRes_tpl() {
+	public org.modmacao.occi.platform.Res_tpl createRes_tpl() {
 		return new Res_tplConnector();
 	}
 
@@ -83,7 +83,7 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.platform.impl.Platfor
 	 * - title: Database Mixin
 	 */
 	@Override
-	public org.eclipse.cmf.occi.platform.Database createDatabase() {
+	public org.modmacao.occi.platform.Database createDatabase() {
 		return new DatabaseConnector();
 	}
 
@@ -94,7 +94,7 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.platform.impl.Platfor
 	 * - title: Database Link
 	 */
 	@Override
-	public org.eclipse.cmf.occi.platform.Databaselink createDatabaselink() {
+	public org.modmacao.occi.platform.Databaselink createDatabaselink() {
 		return new DatabaselinkConnector();
 	}
 

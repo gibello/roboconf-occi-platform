@@ -22,7 +22,7 @@ import java.util.logging.Logger;
  * - term: componentlink
  * - title: ComponentLink
  */
-public class ComponentlinkConnector extends org.eclipse.cmf.occi.platform.impl.ComponentlinkImpl
+public class ComponentlinkConnector extends org.modmacao.occi.platform.impl.ComponentlinkImpl
 {
 	/**
 	 * Initialize the logger.

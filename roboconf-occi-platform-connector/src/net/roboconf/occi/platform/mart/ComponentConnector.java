@@ -16,7 +16,7 @@ package net.roboconf.occi.platform.mart;
 
 import java.util.logging.Logger;
 
-import org.eclipse.cmf.occi.platform.Status;
+import org.modmacao.occi.platform.Status;
 
 import net.roboconf.core.model.beans.Instance.InstanceStatus;
 import net.roboconf.dm.rest.client.WsClient;
@@ -27,7 +27,7 @@ import net.roboconf.dm.rest.client.exceptions.ApplicationWsException;
  * - term: component
  * - title: Component
  */
-public class ComponentConnector extends org.eclipse.cmf.occi.platform.impl.ComponentImpl
+public class ComponentConnector extends org.modmacao.occi.platform.impl.ComponentImpl
 {
 	String applicationName = "occiware-test-application";
 	Logger logger = Logger.getLogger(this.getClass().getName());
@@ -93,6 +93,27 @@ public class ComponentConnector extends org.eclipse.cmf.occi.platform.impl.Compo
 	/**
 	 * Implement OCCI action:
      * - scheme: http://schemas.ogf.org/occi/platform/component/action#
+     * - term: deploy
+     * - title: Deploy the application.
+	 */
+	@Override
+	public void deploy()
+	{
+		logger.info("Action deploy() called on " + this);
+
+		try {
+			WsClient client = new WsClient(getRoboconfUrl());
+			client.getApplicationDelegate().changeInstanceState(this.getOcciComponentStateMessage(),
+					InstanceStatus.DEPLOYED_STOPPED, this.getTitle());
+			this.setOcciComponentState(Status.INACTIVE);
+		} catch (ApplicationWsException e) {
+			e.printStackTrace(System.err);
+		}
+	}
+	
+	/**
+	 * Implement OCCI action:
+     * - scheme: http://schemas.ogf.org/occi/platform/component/action#
      * - term: start
      * - title: Start the application.
 	 */
@@ -125,7 +146,7 @@ public class ComponentConnector extends org.eclipse.cmf.occi.platform.impl.Compo
 		try {
 			WsClient client = new WsClient(getRoboconfUrl());
 			client.getApplicationDelegate().changeInstanceState(this.getOcciComponentStateMessage(),
-					InstanceStatus.NOT_DEPLOYED, this.getTitle());
+					InstanceStatus.DEPLOYED_STOPPED, this.getTitle());
 			this.setOcciComponentState(Status.INACTIVE);
 		} catch (ApplicationWsException e) {
 			e.printStackTrace(System.err);
@@ -133,6 +154,28 @@ public class ComponentConnector extends org.eclipse.cmf.occi.platform.impl.Compo
 
 	}
 
+	/**
+	 * Implement OCCI action:
+     * - scheme: http://schemas.ogf.org/occi/platform/component/action#
+     * - term: undeploy
+     * - title: Undeploy the application.
+	 */
+	@Override
+	public void undeploy()
+	{
+		logger.info("Action undeploy() called on " + this);
+
+		try {
+			WsClient client = new WsClient(getRoboconfUrl());
+			client.getApplicationDelegate().changeInstanceState(this.getOcciComponentStateMessage(),
+					InstanceStatus.NOT_DEPLOYED, this.getTitle());
+			this.setOcciComponentState(Status.UNDEPLOYED);
+		} catch (ApplicationWsException e) {
+			e.printStackTrace(System.err);
+		}
+
+	}
+	
 	/**
 	 * Retrieves Roboconf URL
 	 * @return The URL of Roboconf DM

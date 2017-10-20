@@ -22,7 +22,7 @@ import java.util.logging.Logger;
  * - term: database
  * - title: Database Mixin
  */
-public class DatabaseConnector extends org.eclipse.cmf.occi.platform.impl.DatabaseImpl
+public class DatabaseConnector extends org.modmacao.occi.platform.impl.DatabaseImpl
 {
 	/**
 	 * Initialize the logger.

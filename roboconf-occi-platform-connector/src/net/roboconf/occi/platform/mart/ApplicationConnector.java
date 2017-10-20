@@ -29,8 +29,8 @@ import org.eclipse.cmf.occi.core.Configuration;
 import org.eclipse.cmf.occi.core.Extension;
 import org.eclipse.cmf.occi.core.Kind;
 import org.eclipse.cmf.occi.core.util.OcciHelper;
-import org.eclipse.cmf.occi.platform.Component;
-import org.eclipse.cmf.occi.platform.Status;
+import org.modmacao.occi.platform.Component;
+import org.modmacao.occi.platform.Status;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -39,7 +39,7 @@ import org.eclipse.emf.common.util.EList;
  * - term: application
  * - title: Application
  */
-public class ApplicationConnector extends org.eclipse.cmf.occi.platform.impl.ApplicationImpl
+public class ApplicationConnector extends org.modmacao.occi.platform.impl.ApplicationImpl
 {
 	WsClient client;
 	String applicationName = "occiware-test-application";

@@ -22,7 +22,7 @@ import java.util.logging.Logger;
  * - term: res_tpl
  * - title: Resource Template
  */
-public class Res_tplConnector extends org.eclipse.cmf.occi.platform.impl.Res_tplImpl
+public class Res_tplConnector extends org.modmacao.occi.platform.impl.Res_tplImpl
 {
 	/**
 	 * Initialize the logger.

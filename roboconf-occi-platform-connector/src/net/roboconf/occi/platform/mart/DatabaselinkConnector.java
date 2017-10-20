@@ -22,7 +22,7 @@ import java.util.logging.Logger;
  * - term: databaselink
  * - title: Database Link
  */
-public class DatabaselinkConnector extends org.eclipse.cmf.occi.platform.impl.DatabaselinkImpl
+public class DatabaselinkConnector extends org.modmacao.occi.platform.impl.DatabaselinkImpl
 {
 	/**
 	 * Initialize the logger.
