@@ -101,13 +101,17 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 	{
 		logger.info("Action deploy() called on " + this);
 
-		try {
-			WsClient client = new WsClient(getRoboconfUrl());
-			client.getApplicationDelegate().changeInstanceState(this.getOcciComponentStateMessage(),
-					InstanceStatus.DEPLOYED_STOPPED, this.getTitle());
-			this.setOcciComponentState(Status.INACTIVE);
-		} catch (ApplicationWsException e) {
-			e.printStackTrace(System.err);
+		if(isVM(this.getTitle())) {
+			start();
+		} else {
+			try {
+				WsClient client = new WsClient(getRoboconfUrl());
+				client.getApplicationDelegate().changeInstanceState(this.getOcciComponentStateMessage(),
+						InstanceStatus.DEPLOYED_STOPPED, this.getTitle());
+				this.setOcciComponentState(Status.INACTIVE);
+			} catch (ApplicationWsException e) {
+				e.printStackTrace(System.err);
+			}
 		}
 	}
 	
@@ -143,15 +147,18 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 	{
 		logger.info("Action stop() called on " + this);
 
-		try {
-			WsClient client = new WsClient(getRoboconfUrl());
-			client.getApplicationDelegate().changeInstanceState(this.getOcciComponentStateMessage(),
-					InstanceStatus.DEPLOYED_STOPPED, this.getTitle());
-			this.setOcciComponentState(Status.INACTIVE);
-		} catch (ApplicationWsException e) {
-			e.printStackTrace(System.err);
+		if(isVM(this.getTitle())) {
+			undeploy();
+		} else {
+			try {
+				WsClient client = new WsClient(getRoboconfUrl());
+				client.getApplicationDelegate().changeInstanceState(this.getOcciComponentStateMessage(),
+						InstanceStatus.DEPLOYED_STOPPED, this.getTitle());
+				this.setOcciComponentState(Status.INACTIVE);
+			} catch (ApplicationWsException e) {
+				e.printStackTrace(System.err);
+			}
 		}
-
 	}
 
 	/**
@@ -184,6 +191,10 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 		String url = this.getSummary();
 		if(url == null) url = "http://localhost:8181/roboconf-dm";
 		return url;
+	}
+	
+	private boolean isVM(String instancePath) {
+		return (instancePath.lastIndexOf("/") <= 0);
 	}
 
 	/* TEST main...
