@@ -94,13 +94,13 @@ public class ApplicationConnector extends org.modmacao.occi.platform.impl.Applic
 			List<Instance> instances = this.client.getApplicationDelegate().listChildrenInstances(this.applicationName, null, true);
 			Kind componentKind = OcciHelper.getKindByTerm(currentExt, "component");
 			
-			int count = 1;
+			//int count = 1;
 			for(Instance instance : instances) {
 				String path = instance.data.get(JSonBindingUtils.AT_INSTANCE_PATH);
 				logger.info("Roboconf instance found: " + path);
 				Component component = (Component)OcciHelper.createEntity(componentKind);
-				//component.setLocation("/component/" + path.substring(1).replaceAll("/", "").replaceAll("\\s+", ""));
-				component.setLocation("/component/" + count++);
+				component.setLocation("/component/" + path.substring(1).replaceAll("/", "_").replaceAll("\\s+", ""));
+				//component.setLocation("/component/" + count++);
 				InstanceStatus stat = instance.getStatus();
 				component.setOcciComponentState(stat == InstanceStatus.DEPLOYED_STARTED ? Status.ACTIVE : Status.INACTIVE);
 				// Using Title, Message and Summary URL to pass context information...
